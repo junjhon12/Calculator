@@ -1,0 +1,15 @@
+*{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+html,body{height:100%;margin:0}
+body{display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f0f3ff,#ffffff);padding:2rem}
+main.calculator{width:360px;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(20,20,50,.08);overflow:hidden;display:flex;flex-direction:column}
+.display{padding:20px;background:linear-gradient(180deg,#f8fbff,#eef6ff);border-bottom:1px solid #e6eefc;min-height:88px;display:flex;flex-direction:column;justify-content:center}
+.display .expr{color:#5b6a8a;font-size:14px;opacity:.8}
+.display .value{font-size:32px;font-weight:600;color:#0b1a33;margin-top:6px}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px;background:transparent}
+.key{background:#f6f9ff;border:1px solid #e4ecff;border-radius:8px;padding:14px 10px;font-size:18px;color:#0b1a33;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:center}
+.key.operator{background:#eef4ff;color:#05316b;font-weight:600}
+.key.action{background:#ffece6;color:#7a2a00}
+.key.equals{background:#0b63ff;color:white;border:none;grid-column:span 1}
+.key:active{transform:translateY(1px)}
+.key.zero{grid-column:span 2}
+@media (max-width:400px){main.calculator{width:100%}}
