@@ -1,39 +1,53 @@
-# Vanilla JavaScript Calculator
+# 🧮 Vanilla JavaScript Arithmetic Engine
 
-A fully functional calculator built entirely with vanilla JavaScript. This project demonstrates dynamic DOM manipulation, event delegation, and a custom mathematical expression parser.
+![JavaScript](https://img.shields.io/badge/Logic-JavaScript_ES6+-f7df1e?logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/Style-CSS3-1572B6?logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/Structure-HTML5-E34F26?logo=html5&logoColor=white)
 
-## Features
+A high-performance, browser-based calculator built with pure JavaScript. This project moves beyond simple UI by implementing a **custom token-based mathematical parser**, avoiding the security risks associated with the native `eval()` function.
 
-- **Dynamic UI Generation**: The entire user interface (display, keypad, layout) is constructed programmatically using JavaScript. No hardcoded HTML structure is required inside the `<body>`.
-- **Secure Calculation**: Replaces the unsafe `eval()` function with a custom `calculate()` parser that tokenizes inputs and respects mathematical operator precedence (PEMDAS/BODMAS).
-- **Smart Input Logic**:
-  - Prevents consecutive operators (e.g., replacing `+` with `-` if typed immediately after).
-  - Handles negative numbers at the start of expressions.
-  - Clear ('C') functionality.
-- **Responsive Layout**: Styled using Flexbox for a clean, grid-based interface.
+🔗 **Live Demo:** [Insert Your GitHub Pages Link Here]
 
-## How It Works
+---
 
-### 1. DOM Manipulation
-The script selects the `<main>` element and appends the display and button grid. CSS styles are applied directly via the `style` property to keep the project self-contained.
+## 🚀 Technical Highlights
 
-### 2. Custom Parser
-Instead of using `eval()`, the calculator uses a token-based approach:
-1.  **Tokenization**: Splits the input string by spaces (operators are padded with spaces during input).
-2.  **Precedence Handling**: Iterates through the tokens in two passes:
-    -   **Pass 1**: Multiplication (`*`) and Division (`/`).
-    -   **Pass 2**: Addition (`+`) and Subtraction (`-`).
+### **1. Secure Expression Parsing**
+Unlike standard tutorial calculators, this engine uses a custom `calculate()` function. It tokenizes the input string and processes calculations in two distinct passes to respect **operator precedence (PEMDAS/BODMAS)**:
+* **Pass 1:** Multiplication (`*`) and Division (`/`).
+* **Pass 2:** Addition (`+`) and Subtraction (`-`).
 
-### 3. Event Delegation
-A single event listener is attached to the parent `keys` container to handle all button clicks, improving performance compared to attaching listeners to individual buttons.
+### **2. Dynamic UI Generation**
+To maintain a "thin" HTML structure, the entire interface—including the display, keypad, and grid layout—is constructed programmatically. This demonstrates deep knowledge of the **DOM API** and `appendChild` patterns.
 
-## Usage
+### **3. Efficient Event Handling**
+Utilizes **Event Delegation** by attaching a single listener to the parent container. This optimizes memory usage and performance by managing all button interactions through a single entry point.
 
-1.  Include the script in your HTML file:
-    ```html
-    <body>
-        <main></main>
-        <script src="script.js"></script>
-    </body>
-    ```
-2.  Open the HTML file in any modern web browser.
+---
+
+## ✨ Key Features
+
+* **Smart Operator Logic:** Automatically prevents invalid consecutive operators (e.g., `5 + -` becomes `5 -`).
+* **Negative Number Support:** Correcty handles negative values at the start of expressions.
+* **Responsive Grid:** A clean, centered interface styled with Flexbox.
+* **Pure Vanilla:** Zero dependencies or external libraries.
+
+---
+
+## 📂 Repository Structure
+
+```text
+/
+├── index.html   # Minimal entry point
+├── styles.css   # Layout and theme definitions
+├── script.js    # Core parser and UI logic
+└── README.md    # Project documentation
+🛠️ Installation & Usage
+Clone the repo:
+
+Bash
+
+git clone [https://github.com/junjhon12/Calculator.git](https://github.com/junjhon12/Calculator.git)
+Open index.html in any modern browser.
+
+Created as part of my journey to master JavaScript logic and secure coding practices.
